@@ -4,7 +4,7 @@
 - Python resources
 - 5 min break
 - Text and printing
-- Collectrions (Lists)
+- Collections (Lists)
 - 5 min break
 - Collections (Dictionaries)
 - wrap up
