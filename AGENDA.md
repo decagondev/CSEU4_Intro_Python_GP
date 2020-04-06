@@ -1,6 +1,7 @@
 # Python I Agenda
 
 ## Day 1 (Intro to Python Programming)
+- Info and logistics
 - Python resources
 - 5 min break
 - Text and printing
