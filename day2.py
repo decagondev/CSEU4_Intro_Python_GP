@@ -1,5 +1,5 @@
 # Passing by value Vs passing by Ref
-
+import time
 # define a doubling function that passes args by value
 def mult2(x):
     return x * 2
@@ -29,7 +29,7 @@ def mult2_list(l):
 # Return the "centered" average of an array of ints, which we'll say is the mean average of the values, 
 # except ignoring the largest and smallest values in the array. 
 
-# centered_average([1, 2, 3, 4, 100]) → 3
+# centered_average([1, 2, 3, 4, 100]) → 3 (1 100)... (2 + 3 + 4) => 9 ==> 9 / 3 => 3
 # centered_average([1, 1, 5, 5, 10, 8, 7]) → 5 (1 + 5 + 5 + 8 + 7) // 5
 # centered_average([-10, -4, -2, -4, -2, 0]) → -3
 
@@ -40,9 +40,33 @@ def mult2_list(l):
 # do we need to account for floating points in our answers? no we only want to use int answers //
 
 # PLAN & EXECUTE
+# maybe use min / max?
+# maybe use builtins?
 
 def centered_avg1(ints):
-    pass
+    # gather smallest and largest values for later
+    # grab smallest in to a var using the min function
+    smallest = min(ints)
+    # grab largest in to a var using the max function
+    largest = max(ints)
+
+    # sum up the totals of the values in the list
+    # set a sum var to zero
+    sum = 0
+    # iterate over the numbers
+    for i in ints:
+        # increment the sum by the current number
+        sum += i
+
+    # subtract the smallest and largest values that we stored earlier
+    # set our sum to our sum minus smallest and largest
+    sum = sum - smallest - largest
+
+    # get the mean of the remaining items by way of this algorithm 
+    # end_result = sum of all numbers excluding the smallest and largest floor divided by the length of the list minus 2
+    end_result = sum // (len(ints) - 2)
+    # and return our end_result
+    return end_result
 
 def centered_avg2(ints):
     pass
