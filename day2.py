@@ -68,8 +68,21 @@ def centered_avg1(ints):
     # and return our end_result
     return end_result
 
+import statistics
+# def centered_avg2(ints):
+#     # sort our ints
+#     ints.sort()
+#     # extract the midle values via a slice
+#     middle_values = ints[1:-1]
+#     # give the mean of the middle values
+#     our_mean = statistics.mean(middle_values)
+#     # return our mean
+#     return our_mean
+
 def centered_avg2(ints):
-    pass
+    ints.sort()
+    return statistics.mean(ints[1:-1])
+
 
 # tests
 
