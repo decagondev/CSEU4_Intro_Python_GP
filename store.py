@@ -10,9 +10,10 @@ class Store:
         for c in self.categories:
             output += "  " + str(cat_index) + ". " + c + "\n"
             cat_index += 1
+        output += "  " + str(cat_index) + ". Exit"
         return output
 
-s = Store("Bobs Store", ["Books", "Weapons", "Food"])
+s = Store("Bobs Store", ["Books", "Weapons", "Food", "Bob"])
 
 print(s)
 
@@ -20,3 +21,18 @@ print(s)
 # l = [12, 23, 34, 56, 78]
 # for i,j in enumerate(l):
 #     print(i, j)
+
+selection = 0
+
+while selection != len(s.categories) + 1:
+    selection = input("Select the dept number: ")
+    try:
+        selection = int(selection)
+        if selection == len(s.categories) + 1:
+            print("Thanks for shopping with us!!!")
+        elif selection > 0 and selection <= len(s.categories):
+            print("The user selected " + s.categories[selection - 1])
+        else:
+            print("please choose a valid number")
+    except ValueError:
+        print("Please input a number")
