@@ -36,6 +36,51 @@ class Mob(Entity): # is_a relationship
         super().__init__(id, x, y)
         # self.bob = super().get_id()
 
-foo = Foo()
+# foo = Foo()
 
-print(foo)
+# print(foo)
+class Item:
+    def __init__(self, name, description=""):
+        self.name = name
+        self.description = description
+
+class Weapon(Item):
+    def __init__(self, name, power, description=''):
+        super().__init__(name, description=description)
+        self.power = power
+
+class Room:
+    def __init__(self, name, description):
+        self.name = name
+        self.description = description
+        self.items = [Weapon("Knife", 10), Item("Hammer")]
+
+
+class Player:
+    def __init__(self, starting_room):
+        self.current_room = starting_room
+        self.inventory = [Item("Shield")] # has_a item
+        self.gold = 0
+
+    def move(self, direction):
+        # check if current room has direction_to
+            # return current rooms direction_to
+        # otherwise
+            # tell user they can not go that way
+        pass
+
+    def pick_up(self, item):
+        # if item exists in current room
+            # create instance of item in inv
+            # delete item from room
+        # otherwise
+            # tell player that they can not do that
+        pass
+
+    def drop(self, item):
+        # if item exists in inv
+            # create instance of item in current room
+            # delete item from inv
+        # otherwise
+            # tell player that they can not do that
+        pass
